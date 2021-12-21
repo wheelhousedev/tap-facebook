@@ -30,6 +30,12 @@
                 "string"
             ]
         },
+        "buying_type": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
         "spend_cap": {
             "type": [
                 "null",
