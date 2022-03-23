@@ -44,20 +44,20 @@ INSIGHTS_MAX_WAIT_TO_START_SECONDS = 5 * 60
 INSIGHTS_MAX_WAIT_TO_FINISH_SECONDS = 30 * 60
 INSIGHTS_MAX_ASYNC_SLEEP_SECONDS = 5 * 60
 
-RESULT_RETURN_LIMIT = 1
+RESULT_RETURN_LIMIT = 1000
 
 STREAMS = [
-    'adcreative',
-    'ads',
-    'adsets',
-    'campaigns',
-    'ads_insights',
-    'ads_insights_age_and_gender',
-    'ads_insights_country',
-    'ads_insights_platform_and_device',
-    'ads_insights_region',
-    'ads_insights_dma',
-    'ads_insights_hourly_advertiser',
+    # 'adcreative',
+     'ads',
+    # 'adsets',
+    # 'campaigns',
+    # 'ads_insights',
+    # 'ads_insights_age_and_gender',
+    # 'ads_insights_country',
+    # 'ads_insights_platform_and_device',
+    # 'ads_insights_region',
+    # 'ads_insights_dma',
+    # 'ads_insights_hourly_advertiser',
     # 'leads',
 ]
 
@@ -324,7 +324,9 @@ class Ads(IncrementalStream):
         This is necessary because the functions that call this endpoint return
         a generator, whose calls need decorated with a backoff.
         """
-        return self.account.get_ads(fields=self.automatic_fields(), params=params) # pylint: disable=no-member
+        job = self.account.get_ads(fields=self.automatic_fields(), params=params)
+        time.sleep(30)
+        return job # pylint: disable=no-member
 
     def __iter__(self):
         def do_request():
