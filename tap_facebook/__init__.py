@@ -44,7 +44,7 @@ INSIGHTS_MAX_WAIT_TO_START_SECONDS = 5 * 60
 INSIGHTS_MAX_WAIT_TO_FINISH_SECONDS = 30 * 60
 INSIGHTS_MAX_ASYNC_SLEEP_SECONDS = 5 * 60
 
-RESULT_RETURN_LIMIT = 10
+RESULT_RETURN_LIMIT = 1
 
 STREAMS = [
     'adcreative',
@@ -58,7 +58,7 @@ STREAMS = [
     'ads_insights_region',
     'ads_insights_dma',
     'ads_insights_hourly_advertiser',
-    #'leads',
+    'leads',
 ]
 
 REQUIRED_CONFIG_KEYS = ['start_date', 'account_id', 'access_token']
