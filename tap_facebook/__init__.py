@@ -48,7 +48,7 @@ RESULT_RETURN_LIMIT = 1000
 
 STREAMS = [
     'adcreative',
-     'ads',
+    'ads',
     'adsets',
     'campaigns',
     'ads_insights',
